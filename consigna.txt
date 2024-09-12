@@ -1,0 +1,54 @@
+Diseñando con Algoritmos | Pre-Parcial CheckPoint 1
+WebComponents
+
+Descripción:
+En este pre-parcial, los estudiantes trabajarán de 
+manera individual utilizando web Components para 
+desarrollar componentes modulares y reutilizables. 
+La tarea principal consiste en crear una lista de 
+tareas utilizando un componente <task-list>, donde 
+cada tarea será representada por un componente hijo 
+<task-item>. Estos componentes deben gestionar el 
+estado de las tareas y encapsular los estilos 
+utilizando Shadow DOM.
+
+
+Requisitos:
+Configurar el proyecto utilizando node.js:
+Establecer la configuración del proyecto utilizando node.js.
+Escribir un código limpio, con buen nombramiento de 
+elementos (componentes, variables, clases, etc), 
+algoritmos claros y apropiados.
+Hacer uso correcto del file system:
+
+proyecto/
+├── src/
+│   └── components/
+│   │   └── TaskList/
+│   │   │   ├── TaskList.js
+│   │   │   └── TaskList.css
+│   │   └── TaskItem/
+│   │   │   ├── TaskItem.js
+│   │   │   └── TaskItem.css
+│   │   └── indexPadre.js
+│   └── indexAbuelo.js
+│   └── index.css
+	.
+	.
+	.
+Diseñar y desarrollar componentes reutilizables y 
+modulares utilizando Web Components.
+Implementar el Shadow DOM para encapsular el estilo 
+y proteger el contenido interno de cada tarea.
+Componente <task-list>: 
+Este componente debe contener una lista de tareas.
+Incluir un formulario que permita añadir nuevas tareas 
+y mostrarlas haciendo uso del componente <task-item>.
+Componente <task-item>: 
+Recibe información de la tarea (título, descripción, 
+estado) a través de atributos.
+Capaz de marcar la tarea como completada o pendiente.
+Crear un método que actualice el estado visual del 
+componente cuando la tarea sea completada.
+
+

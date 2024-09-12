@@ -1,0 +1,16 @@
+{
+  "name": "repaso-examen-1",
+  "version": "1.0.0",
+  "main": "indexAbuelo.js",
+  "type": "module",
+  "scripts": {
+    "start": "serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "serve": "^14.2.3"
+  }
+}
