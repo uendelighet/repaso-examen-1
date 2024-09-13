@@ -13,10 +13,10 @@ class AppContainer extends HTMLElement {
   }
 
   render() {
-   this.shadowRoot.innerHTML += `
-inút boton 
+   this.shadowRoot.innerHTML = `
+   <task-list></task-list>
+    `}
    
-  }
 }
 
 customElements.define('app-container', AppContainer);

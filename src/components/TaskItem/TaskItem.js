@@ -5,40 +5,57 @@ class TaskItem extends HTMLElement {
 	}
 
 	static get observedAttributes() {
-		return ['título', 'descripción'];
+		return ['título', 'descripción', 'completed'];
 	}
 
 	connectedCallback() {
 		this.render();
+
 	}
 
 	attributeChangedCallback(propName, oldValue, newValue) {
-		if (oldValue !== newValue) {
-			this[propName] = newValue;
-			this.render();
+		if (propName === 'completed'){
+			this.updateStatus()
 		}
 	}
 
-	render() {
+	updateStatus (){
+		const taskContainer = this.shadowRoot.querySelector(".task-item")
+		taskContainer.classList.toggle("completed", this.getAttribute("completed") === "true")
 
+	}
+
+	render() {
         this.shadowRoot.innerHTML = `
         <style>
-
-            .task-item {
-
+        .task-item {
                 display: flex;
                 flex-wrap: column;
                 justify-content: center;
                 background-color: aqua;
-            };
+        }
+		.completed {
+		text-decoration: line-through;
+		color: red;
+		}
         </style>
         <div class="task-item"> 
-        <input type = "checkbox" name = "task-checkbox"/> 
-        <h1>${this.titulo || 'Task without name'}</h1>
-        <p>${this.descripcion || 'No tiene descripcion'}</p>
-        
+		<div>
+        <h4>${this.getAttribute("title")}</h4>
+        <p>${this.getAttribute("description")}</p>
+		<div>
+		<button id="toggle-completed">Completada</button>
         </div> 
         `;
+
+		this.shadowRoot.querySelector('#toggle-completed').addEventListener('click', () => {
+			const isCompleted = this.getAttribute('completed') === "true"; 
+			this.setAttribute('completed', isCompleted ? 'false' : 'true');
+		});
+
+		this.updateStatus();
+
+
 	}
 }
 
